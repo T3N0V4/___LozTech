@@ -1,0 +1,129 @@
+/* BLACK - DEFAULT */
+
+:root,
+[data-theme="black"] {
+    --background: #0d0f12;
+    --surface: #15181d;
+    --surface-secondary: #1d2127;
+
+    --text: #edf0f3;
+    --text-secondary: #929ba6;
+
+    --border: #2a3038;
+
+    --ok: #43c590;
+    --ok-bg: #17372b;
+
+    --warning: #e5ad4c;
+    --warning-bg: #3c301b;
+
+    --error: #e56363;
+    --error-bg: #3d2020;
+
+    --info: #7b9bb8;
+    --info-bg: #20303e;
+}
+
+
+/* BLUE */
+
+[data-theme="blue"] {
+    --background: #08111d;
+    --surface: #0d1b2a;
+    --surface-secondary: #13273b;
+
+    --text: #e8f2ff;
+    --text-secondary: #8fa9c4;
+
+    --border: #1e3a55;
+
+    --ok: #44d19d;
+    --ok-bg: #123b31;
+
+    --warning: #f1b957;
+    --warning-bg: #43351c;
+
+    --error: #f06b72;
+    --error-bg: #422329;
+
+    --info: #5fa9ff;
+    --info-bg: #15385d;
+}
+
+
+/* VIOLET */
+
+[data-theme="violet"] {
+    --background: #110d18;
+    --surface: #1b1426;
+    --surface-secondary: #271d35;
+
+    --text: #f2eaff;
+    --text-secondary: #ad9abc;
+
+    --border: #3b2c4d;
+
+    --ok: #55d6a2;
+    --ok-bg: #173b31;
+
+    --warning: #e7b65b;
+    --warning-bg: #43351f;
+
+    --error: #ef707f;
+    --error-bg: #44222b;
+
+    --info: #b484ff;
+    --info-bg: #352251;
+}
+
+
+/* COSMOS */
+
+[data-theme="cosmos"] {
+    --background: #080814;
+    --surface: #111126;
+    --surface-secondary: #191936;
+
+    --text: #f0efff;
+    --text-secondary: #9998bd;
+
+    --border: #2c2c58;
+
+    --ok: #4fe3bd;
+    --ok-bg: #123c38;
+
+    --warning: #f2c35c;
+    --warning-bg: #45391d;
+
+    --error: #ff6f91;
+    --error-bg: #492137;
+
+    --info: #72c7ff;
+    --info-bg: #183b59;
+}
+
+
+/* GREY */
+
+[data-theme="grey"] {
+    --background: #181818;
+    --surface: #222222;
+    --surface-secondary: #2b2b2b;
+
+    --text: #eeeeee;
+    --text-secondary: #aaaaaa;
+
+    --border: #3b3b3b;
+
+    --ok: #73ba91;
+    --ok-bg: #263a2e;
+
+    --warning: #cfab68;
+    --warning-bg: #403722;
+
+    --error: #d77777;
+    --error-bg: #412929;
+
+    --info: #91a7b8;
+    --info-bg: #293640;
+}

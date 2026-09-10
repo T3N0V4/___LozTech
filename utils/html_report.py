@@ -228,12 +228,42 @@ def crear_reporte_html(
 
     {html_explosion}
 
-    <header>
+        <header>
 
         <div class="container">
 
-            <div class="brand">
-                LOZTECH
+            <div class="header-top">
+
+                <div class="brand">
+                    LOZTECH
+                </div>
+
+                <select
+                    id="theme-selector"
+                    class="theme-selector"
+                    aria-label="Tema"
+                >
+                    <option value="black">
+                        Black
+                    </option>
+
+                    <option value="blue">
+                        Blue
+                    </option>
+
+                    <option value="violet">
+                        Violet
+                    </option>
+
+                    <option value="cosmos">
+                        Cosmos
+                    </option>
+
+                    <option value="grey">
+                        Grey
+                    </option>
+                </select>
+
             </div>
 
             <h1>
