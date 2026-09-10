@@ -11,33 +11,164 @@ from utils.assets import (
 def crear_tarjetas(secciones):
     tarjetas = ""
 
+    nombres_estado = {
+        "ok": "Correcto",
+        "warning": "Atención",
+        "error": "Problema",
+        "info": "Información"
+    }
+
     for seccion in secciones:
         titulo = escape(
-            str(
-                seccion.get(
-                    "titulo",
-                    ""
-                )
-            )
+            str(seccion.get("titulo", ""))
         )
 
-        contenido = escape(
-            str(
-                seccion.get(
-                    "contenido",
-                    ""
-                )
-            )
+        resumen = escape(
+            str(seccion.get("resumen", ""))
         )
+
+        detalles = escape(
+            str(seccion.get("detalles", ""))
+        )
+
+        estado = seccion.get(
+            "estado",
+            "info"
+        )
+
+        nombre_estado = nombres_estado.get(
+            estado,
+            "Información"
+        )
+
+        progreso = seccion.get(
+            "progreso"
+        )
+
+        barra = ""
+
+        if progreso is not None:
+            progreso = max(
+                0,
+                min(100, progreso)
+            )
+
+            barra = f"""
+            <div class="progress">
+                <div
+                    class="progress-value {estado}"
+                    style="width: {progreso}%"
+                ></div>
+            </div>
+
+            <div class="progress-number">
+                {progreso}%
+            </div>
+            """
+
+        detalles_html = ""
+
+        if detalles:
+            detalles_html = f"""
+            <details>
+                <summary>Ver detalles</summary>
+
+                <pre>{detalles}</pre>
+            </details>
+            """
 
         tarjetas += f"""
-        <section class="card">
-            <h2>{titulo}</h2>
-            <pre>{contenido}</pre>
-        </section>
+        <article class="card {estado}">
+
+            <div class="card-top">
+
+                <h2>{titulo}</h2>
+
+                <span class="badge {estado}">
+                    {nombre_estado}
+                </span>
+
+            </div>
+
+            <p class="resumen">
+                {resumen}
+            </p>
+
+            {barra}
+
+            {detalles_html}
+
+        </article>
         """
 
     return tarjetas
+
+
+def crear_resumen(secciones):
+    conteos = {
+        "ok": 0,
+        "warning": 0,
+        "error": 0,
+        "info": 0
+    }
+
+    for seccion in secciones:
+        estado = seccion.get(
+            "estado",
+            "info"
+        )
+
+        conteos[estado] = (
+            conteos.get(estado, 0)
+            + 1
+        )
+
+    if conteos["error"] > 0:
+        estado_general = "Se detectaron problemas"
+        clase = "error"
+
+    elif conteos["warning"] > 0:
+        estado_general = "Hay elementos para revisar"
+        clase = "warning"
+
+    else:
+        estado_general = "No se detectaron problemas importantes"
+        clase = "ok"
+
+    return f"""
+    <section class="summary">
+
+        <div>
+            <span class="summary-label">
+                Resultado
+            </span>
+
+            <h2 class="{clase}">
+                {estado_general}
+            </h2>
+        </div>
+
+        <div class="summary-stats">
+
+            <div>
+                <strong>{conteos["ok"]}</strong>
+                <span>Correctos</span>
+            </div>
+
+            <div>
+                <strong>{conteos["warning"]}</strong>
+                <span>Atención</span>
+            </div>
+
+            <div>
+                <strong>{conteos["error"]}</strong>
+                <span>Problemas</span>
+            </div>
+
+        </div>
+
+    </section>
+    """
 
 
 def crear_reporte_html(
@@ -48,9 +179,14 @@ def crear_reporte_html(
 ):
     css = cargar_css()
     js = cargar_js()
+
     explosion = cargar_explosion_random()
 
     tarjetas = crear_tarjetas(
+        secciones
+    )
+
+    resumen = crear_resumen(
         secciones
     )
 
@@ -61,7 +197,7 @@ def crear_reporte_html(
         <div id="explosion">
             <img
                 src="{explosion}"
-                alt="BOOM"
+                alt=""
             >
         </div>
         """
@@ -80,9 +216,7 @@ def crear_reporte_html(
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        {escape(str(titulo))}
-    </title>
+    <title>{escape(str(titulo))}</title>
 
     <style>
         {css}
@@ -96,7 +230,11 @@ def crear_reporte_html(
 
     <header>
 
-        <div class="contenido">
+        <div class="container">
+
+            <div class="brand">
+                LOZTECH
+            </div>
 
             <h1>
                 {escape(str(titulo))}
@@ -111,13 +249,19 @@ def crear_reporte_html(
     </header>
 
 
-    <main>
-        {tarjetas}
+    <main class="container">
+
+        {resumen}
+
+        <section class="checks">
+            {tarjetas}
+        </section>
+
     </main>
 
 
     <footer>
-        Generado con LozTech USB
+        LozTech USB · Reporte generado localmente
     </footer>
 
 
