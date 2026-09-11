@@ -4,7 +4,7 @@ import socket
 from datetime import datetime
 
 from utils.comandos import ejecutar
-from utils.rutas import REPORTES_DIR
+from utils.rutas import HTML_DIR
 from utils.html_report import crear_reporte_html
 
 
@@ -468,14 +468,7 @@ def generar_diagnostico():
     nombre_pc = socket.gethostname()
     ahora = datetime.now()
 
-    fecha_archivo = ahora.strftime(
-        "%Y-%m-%d_%H-%M-%S"
-    )
-
-    archivo = (
-        REPORTES_DIR
-        / f"Chequeo_{nombre_pc}_{fecha_archivo}.html"
-    )
+    archivo = HTML_DIR / "diagnostico.html"
 
     equipo = obtener_equipo()
 
