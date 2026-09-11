@@ -1,7 +1,7 @@
 import tkinter as tk
 import os
 from tkinter import ttk, messagebox
-
+from utils.html_index import crear_index
 from modules.diagnostico import generar_diagnostico
 from modules.red import diagnosticar_red
 from modules.drivers import exportar_drivers
@@ -122,21 +122,17 @@ def drivers():
         )
     )
 
-
 def drivers_terminados(archivo):
     desbloquear_interfaz()
 
     os.startfile(archivo)
 
-
 def abrir_reportes():
-    archivo = HTML_DIR / "diagnostico.html"
+    archivo = crear_index()
 
-    if archivo.exists():
-        os.startfile(archivo)
-    else:
-        os.startfile(HTML_DIR)
-
+    os.startfile(
+        archivo
+    )
 
 root = tk.Tk()
 

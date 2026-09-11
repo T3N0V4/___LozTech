@@ -13,7 +13,7 @@
     >
 
     <title>
-        Chequeo rápido del sistema
+        Diagnóstico de red
     </title>
 
     <style>
@@ -656,11 +656,11 @@ footer {
 
 
             <h1>
-                Chequeo rápido del sistema
+                Diagnóstico de red
             </h1>
 
             <p>
-                ASUS System Product Name · Microsoft Windows 11 Pro · 11/09/2026 01:01
+                Configuración, conectividad y resolución DNS.
             </p>
 
         </div>
@@ -671,229 +671,211 @@ footer {
     <main class="container">
 
         
-    
-    <section class="summary">
-
-        <div>
-            <span class="summary-label">
-                Resultado
-            </span>
-
-            <h2 class="ok">
-                No se detectaron problemas importantes
-            </h2>
-        </div>
-
-        <div class="summary-stats">
-
-            <div>
-                <strong>6</strong>
-                <span>Correctos</span>
-            </div>
-
-            <div>
-                <strong>0</strong>
-                <span>Atención</span>
-            </div>
-
-            <div>
-                <strong>0</strong>
-                <span>Problemas</span>
-            </div>
-
-        </div>
-
-    </section>
-    
-
     <section class="checks">
-        
-        <article class="card ok">
+
+        <article class="card info">
 
             <div class="card-top">
 
-                <h2>Memoria RAM</h2>
+                <h2>
+                    Configuración de red
+                </h2>
 
-                <span class="badge ok">
-                    Correcto
+                <span class="badge info">
+                    Información
                 </span>
 
             </div>
 
-            <p class="resumen">
-                Uso normal: 54%
-            </p>
+            <details open>
 
-            
-            <div class="progress">
-                <div
-                    class="progress-value ok"
-                    style="width: 54%"
-                ></div>
-            </div>
+                <summary>
+                    Ver configuración
+                </summary>
 
-            <div class="progress-number">
-                54%
-            </div>
-            
+                <pre>Configuraci�n IP de Windows
 
-            
-            <details>
-                <summary>Ver detalles</summary>
+   Nombre de host. . . . . . . . . : Jano
+   Sufijo DNS principal  . . . . . : 
+   Tipo de nodo. . . . . . . . . . : h�brido
+   Enrutamiento IP habilitado. . . : no
+   Proxy WINS habilitado . . . . . : no
 
-                <pre>Instalada: 31.8 GB
-En uso: 17.2 GB
-Libre: 14.6 GB</pre>
+Adaptador desconocido Tailscale:
+
+   Sufijo DNS espec�fico para la conexi�n. . : tail96c256.ts.net
+   Descripci�n . . . . . . . . . . . . . . . : Tailscale Tunnel
+   Direcci�n f�sica. . . . . . . . . . . . . : 
+   DHCP habilitado . . . . . . . . . . . . . : no
+   Configuraci�n autom�tica habilitada . . . : s�
+   Direcci�n IPv6 . . . . . . . . . . : fd7a:115c:a1e0::b33b:8e08(Preferido) 
+   V�nculo: direcci�n IPv6 local. . . : fe80::bd76:b4f6:a81a:5df5%8(Preferido) 
+   Direcci�n IPv4. . . . . . . . . . . . . . : 100.64.142.8(Preferido) 
+   M�scara de subred . . . . . . . . . . . . : 255.255.255.255
+   Puerta de enlace predeterminada . . . . . : 
+   NetBIOS sobre TCP/IP. . . . . . . . . . . : deshabilitado
+   Lista de b�squeda de sufijos DNS espec�ficos de conexi�n:
+                                       tail96c256.ts.net
+
+Adaptador de Ethernet Ethernet:
+
+   Sufijo DNS espec�fico para la conexi�n. . : 
+   Descripci�n . . . . . . . . . . . . . . . : Realtek Gaming 2.5GbE Family Controller
+   Direcci�n f�sica. . . . . . . . . . . . . : BC-FC-E7-4C-2F-B9
+   DHCP habilitado . . . . . . . . . . . . . : s�
+   Configuraci�n autom�tica habilitada . . . : s�
+   V�nculo: direcci�n IPv6 local. . . : fe80::83d9:f17d:8e6e:7dc2%10(Preferido) 
+   Direcci�n IPv4. . . . . . . . . . . . . . : 192.168.1.17(Preferido) 
+   M�scara de subred . . . . . . . . . . . . : 255.255.255.0
+   Concesi�n obtenida. . . . . . . . . . . . : jueves, 10 de septiembre de 2026 17:17:09
+   La concesi�n expira . . . . . . . . . . . : viernes, 11 de septiembre de 2026 17:17:03
+   Puerta de enlace predeterminada . . . . . : 192.168.1.1
+   Servidor DHCP . . . . . . . . . . . . . . : 192.168.1.1
+   IAID DHCPv6 . . . . . . . . . . . . . . . : 96271591
+   DUID de cliente DHCPv6. . . . . . . . . . : 00-01-01-00-31-3E-49-81-BC-FC-E7-4C-2F-B9
+   Servidores DNS. . . . . . . . . . . . . . : 192.168.1.1
+                                       fe80::1%10
+   NetBIOS sobre TCP/IP. . . . . . . . . . . : habilitado
+
+Adaptador de Ethernet Ethernet 2:
+
+   Sufijo DNS espec�fico para la conexi�n. . : 
+   Descripci�n . . . . . . . . . . . . . . . : VirtualBox Host-Only Ethernet Adapter
+   Direcci�n f�sica. . . . . . . . . . . . . : 0A-00-27-00-00-13
+   DHCP habilitado . . . . . . . . . . . . . : no
+   Configuraci�n autom�tica habilitada . . . : s�
+   V�nculo: direcci�n IPv6 local. . . : fe80::5a5a:553c:4988:c6f1%19(Preferido) 
+   Direcci�n IPv4. . . . . . . . . . . . . . : 192.168.56.1(Preferido) 
+   M�scara de subred . . . . . . . . . . . . : 255.255.255.0
+   Puerta de enlace predeterminada . . . . . : 
+   IAID DHCPv6 . . . . . . . . . . . . . . . : 772407335
+   DUID de cliente DHCPv6. . . . . . . . . . : 00-01-01-00-31-3E-49-81-BC-FC-E7-4C-2F-B9
+   NetBIOS sobre TCP/IP. . . . . . . . . . . : habilitado
+
+Adaptador de LAN inal�mbrica Wi-Fi:
+
+   Estado de los medios. . . . . . . . . . . : medios desconectados
+   Sufijo DNS espec�fico para la conexi�n. . : 
+   Descripci�n . . . . . . . . . . . . . . . : Realtek 8852BE Wireless LAN WiFi 6 PCI-E NIC
+   Direcci�n f�sica. . . . . . . . . . . . . : 60-FF-9E-99-BF-74
+   DHCP habilitado . . . . . . . . . . . . . : s�
+   Configuraci�n autom�tica habilitada . . . : s�
+
+Adaptador de LAN inal�mbrica Conexi�n de �rea local* 1:
+
+   Estado de los medios. . . . . . . . . . . : medios desconectados
+   Sufijo DNS espec�fico para la conexi�n. . : 
+   Descripci�n . . . . . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter
+   Direcci�n f�sica. . . . . . . . . . . . . : 62-FF-9E-99-BF-74
+   DHCP habilitado . . . . . . . . . . . . . : s�
+   Configuraci�n autom�tica habilitada . . . : s�
+
+Adaptador de LAN inal�mbrica Conexi�n de �rea local* 2:
+
+   Estado de los medios. . . . . . . . . . . : medios desconectados
+   Sufijo DNS espec�fico para la conexi�n. . : 
+   Descripci�n . . . . . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #2
+   Direcci�n f�sica. . . . . . . . . . . . . : 66-FF-9E-99-BF-74
+   DHCP habilitado . . . . . . . . . . . . . : s�
+   Configuraci�n autom�tica habilitada . . . : s�
+
+Adaptador de Ethernet Conexi�n de red Bluetooth:
+
+   Estado de los medios. . . . . . . . . . . : medios desconectados
+   Sufijo DNS espec�fico para la conexi�n. . : 
+   Descripci�n . . . . . . . . . . . . . . . : Bluetooth Device (Personal Area Network)
+   Direcci�n f�sica. . . . . . . . . . . . . : 60-FF-9E-99-BF-75
+   DHCP habilitado . . . . . . . . . . . . . : s�
+   Configuraci�n autom�tica habilitada . . . : s�
+
+Adaptador de Ethernet vEthernet (Default Switch):
+
+   Sufijo DNS espec�fico para la conexi�n. . : 
+   Descripci�n . . . . . . . . . . . . . . . : Hyper-V Virtual Ethernet Adapter
+   Direcci�n f�sica. . . . . . . . . . . . . : 00-15-5D-73-4E-F9
+   DHCP habilitado . . . . . . . . . . . . . : no
+   Configuraci�n autom�tica habilitada . . . : s�
+   V�nculo: direcci�n IPv6 local. . . : fe80::77d0:bce8:8b61:3b78%24(Preferido) 
+   Direcci�n IPv4. . . . . . . . . . . . . . : 172.31.128.1(Preferido) 
+   M�scara de subred . . . . . . . . . . . . : 255.255.240.0
+   Puerta de enlace predeterminada . . . . . : 
+   IAID DHCPv6 . . . . . . . . . . . . . . . : 402658653
+   DUID de cliente DHCPv6. . . . . . . . . . : 00-01-01-00-31-3E-49-81-BC-FC-E7-4C-2F-B9
+   NetBIOS sobre TCP/IP. . . . . . . . . . . : habilitado</pre>
+
             </details>
-            
 
         </article>
-        
-        <article class="card ok">
+
+
+        <article class="card info">
 
             <div class="card-top">
 
-                <h2>Disco del sistema (C:)</h2>
+                <h2>
+                    Conectividad
+                </h2>
 
-                <span class="badge ok">
-                    Correcto
+                <span class="badge info">
+                    Información
                 </span>
 
             </div>
 
-            <p class="resumen">
-                293.1 GB disponibles
-            </p>
+            <details open>
 
-            
-            <div class="progress">
-                <div
-                    class="progress-value ok"
-                    style="width: 68%"
-                ></div>
-            </div>
+                <summary>
+                    Ver resultado
+                </summary>
 
-            <div class="progress-number">
-                68%
-            </div>
-            
+                <pre>Haciendo ping a 8.8.8.8 con 32 bytes de datos:
+Respuesta desde 8.8.8.8: bytes=32 tiempo=5ms TTL=117
+Respuesta desde 8.8.8.8: bytes=32 tiempo=5ms TTL=117
+Respuesta desde 8.8.8.8: bytes=32 tiempo=4ms TTL=117
+Respuesta desde 8.8.8.8: bytes=32 tiempo=4ms TTL=117
 
-            
-            <details>
-                <summary>Ver detalles</summary>
+Estad�sticas de ping para 8.8.8.8:
+    Paquetes: enviados = 4, recibidos = 4, perdidos = 0
+    (0% perdidos),
+Tiempos aproximados de ida y vuelta en milisegundos:
+    M�nimo = 4ms, M�ximo = 5ms, Media = 4ms</pre>
 
-                <pre>Capacidad: 930.5 GB
-Usado: 637.4 GB
-Libre: 293.1 GB</pre>
             </details>
-            
 
         </article>
-        
-        <article class="card ok">
+
+
+        <article class="card info">
 
             <div class="card-top">
 
-                <h2>Discos físicos</h2>
+                <h2>
+                    DNS
+                </h2>
 
-                <span class="badge ok">
-                    Correcto
+                <span class="badge info">
+                    Información
                 </span>
 
             </div>
 
-            <p class="resumen">
-                4 disco(s), sin alertas
-            </p>
+            <details open>
 
-            
+                <summary>
+                    Ver resultado
+                </summary>
 
-            
-            <details>
-                <summary>Ver detalles</summary>
+                <pre>Servidor:  dev.opt
+Address:  192.168.1.1
 
-                <pre>WD_BLACK SN770 1TB
-SSD · 931.5 GB · Healthy
+Nombre:  google.com
+Addresses:  2800:3f0:4002:80c::200e
+	  142.251.129.78</pre>
 
-KINGSTON SV300S37A120G
-SSD · 111.8 GB · Healthy
-
-Kingston DataTraveler 3.0
-Unspecified · 57.7 GB · Healthy
-
-WDC WD10EZEX-22MFCA0
-HDD · 931.5 GB · Healthy</pre>
             </details>
-            
 
         </article>
-        
-        <article class="card ok">
 
-            <div class="card-top">
-
-                <h2>Dispositivos y drivers</h2>
-
-                <span class="badge ok">
-                    Correcto
-                </span>
-
-            </div>
-
-            <p class="resumen">
-                No se detectaron problemas importantes.
-            </p>
-
-            
-
-            
-
-        </article>
-        
-        <article class="card ok">
-
-            <div class="card-top">
-
-                <h2>Eventos críticos</h2>
-
-                <span class="badge ok">
-                    Correcto
-                </span>
-
-            </div>
-
-            <p class="resumen">
-                Ningún evento crítico en las últimas 24 h.
-            </p>
-
-            
-
-            
-
-        </article>
-        
-        <article class="card ok">
-
-            <div class="card-top">
-
-                <h2>Memoria virtual</h2>
-
-                <span class="badge ok">
-                    Correcto
-                </span>
-
-            </div>
-
-            <p class="resumen">
-                Administrada automáticamente por Windows.
-            </p>
-
-            
-
-            
-
-        </article>
-        
     </section>
     
 
@@ -901,7 +883,7 @@ HDD · 931.5 GB · Healthy</pre>
 
 
     <footer>
-        LozTech USB · Reporte generado localmente
+        LozTech USB · Diagnóstico de red local
     </footer>
 
 
