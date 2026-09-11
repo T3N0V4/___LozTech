@@ -1,25 +1,23 @@
 import base64
 import random
 import os
-from utils.rutas import BASE_DIR
+from utils.rutas import RESOURCE_DIR
 
 
 CSS_DIR = (
-    BASE_DIR
+    RESOURCE_DIR
     / "assets"
     / "css"
 )
 
-
 JS_DIR = (
-    BASE_DIR
+    RESOURCE_DIR
     / "assets"
     / "js"
 )
 
-
 EXPLOSIONES_DIR = (
-    BASE_DIR
+    RESOURCE_DIR
     / "assets"
     / "explosiones"
 )
