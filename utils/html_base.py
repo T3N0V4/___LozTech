@@ -15,10 +15,11 @@ def crear_pagina_html(
     archivo: Path,
     footer="LozTech USB · Generado localmente"
 ):
-    css = cargar_css()
-    js = cargar_js()
+    pagina = archivo.stem
+    css = cargar_css(pagina)
+    js = cargar_js(pagina)
 
-    explosion = cargar_explosion_random()
+    explosion = cargar_explosion_random() if pagina == "index" else None
 
     html_explosion = ""
 
@@ -56,7 +57,7 @@ def crear_pagina_html(
 
 </head>
 
-<body>
+<body data-page="{escape(pagina, quote=True)}">
 
     {html_explosion}
 
@@ -162,7 +163,8 @@ def crear_pagina_html(
 
     archivo.write_text(
         html,
-        encoding="utf-8"
+        encoding="utf-8",
+        newline="\n"
     )
 
     return archivo

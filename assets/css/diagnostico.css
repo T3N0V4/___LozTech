@@ -1,0 +1,5 @@
+/* System diagnostics: summary and results share the common report layout. */
+body[data-page="diagnostico"] header { border-bottom: 2px solid var(--info); }
+body[data-page="diagnostico"] .checks { gap: 22px; }
+body[data-page="diagnostico"] .card.error { border-left: 3px solid var(--error); }
+body[data-page="diagnostico"] .card.warning { border-left: 3px solid var(--warning); }

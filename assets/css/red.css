@@ -1,0 +1,5 @@
+/* Network report: wider technical output, with the same theme tokens. */
+body[data-page="red"] header { border-bottom: 2px solid var(--info); }
+body[data-page="red"] pre { line-height: 1.75; }
+body[data-page="red"] .card.error { border-left: 3px solid var(--error); }
+body[data-page="red"] .card.warning { border-left: 3px solid var(--warning); }

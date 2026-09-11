@@ -77,32 +77,10 @@ def red():
         )
     )
 
-
-def red_terminada(resultado):
+def red_terminada(archivo):
     desbloquear_interfaz()
 
-    ventana = tk.Toplevel(root)
-    ventana.title("Diagnóstico de red")
-    ventana.geometry("700x500")
-
-    texto = tk.Text(
-        ventana,
-        wrap="word"
-    )
-
-    texto.pack(
-        expand=True,
-        fill="both"
-    )
-
-    texto.insert(
-        "1.0",
-        resultado
-    )
-
-    texto.config(
-        state="disabled"
-    )
+    os.startfile(archivo)
 
 
 def drivers():

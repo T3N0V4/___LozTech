@@ -1,0 +1,40 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: LOZTECH
+        - combobox "Tema" [ref=e7] [cursor=pointer]:
+          - option "Black"
+          - option "Blue"
+          - option "Violet" [selected]
+          - option "Cosmos"
+          - option "Grey"
+      - navigation [ref=e8]:
+        - link "Inicio" [ref=e9] [cursor=pointer]:
+          - /url: http://127.0.0.1:8765/HTML/index.html?theme=violet
+        - link "Diagnóstico" [ref=e10] [cursor=pointer]:
+          - /url: http://127.0.0.1:8765/HTML/diagnostico.html?theme=violet
+        - link "Drivers" [ref=e11] [cursor=pointer]:
+          - /url: http://127.0.0.1:8765/HTML/drivers.html?theme=violet
+        - link "Red" [ref=e12] [cursor=pointer]:
+          - /url: http://127.0.0.1:8765/HTML/red.html?theme=violet
+      - heading "Panel" [level=1] [ref=e13]
+      - paragraph [ref=e14]: Herramientas y reportes de LozTech.
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - article [ref=e17]:
+        - heading "Diagnóstico" [level=2] [ref=e19]
+        - paragraph [ref=e20]: Revisar estado general del sistema.
+        - link "Abrir diagnóstico ↗" [ref=e21] [cursor=pointer]:
+          - /url: http://127.0.0.1:8765/HTML/diagnostico.html?theme=violet
+      - article [ref=e22]:
+        - heading "Drivers" [level=2] [ref=e24]
+        - paragraph [ref=e25]: Ver drivers detectados y exportados.
+        - link "Abrir drivers ↗" [ref=e26] [cursor=pointer]:
+          - /url: http://127.0.0.1:8765/HTML/drivers.html?theme=violet
+      - article [ref=e27]:
+        - heading "Red" [level=2] [ref=e29]
+        - paragraph [ref=e30]: Revisar configuración y conectividad.
+        - link "Abrir red ↗" [ref=e31] [cursor=pointer]:
+          - /url: http://127.0.0.1:8765/HTML/red.html?theme=violet
+  - contentinfo [ref=e32]: LozTech USB · Panel principal

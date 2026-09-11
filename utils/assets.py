@@ -25,14 +25,20 @@ EXPLOSIONES_DIR = (
 )
 
 
-def cargar_css():
+def cargar_css(pagina=None):
 
     if not CSS_DIR.exists():
         return ""
 
-    archivos_css = sorted(
-        CSS_DIR.glob("*.css")
-    )
+    nombres = ["theme.css", "report.css"]
+    por_pagina = {
+        "index": ["panel.css", "explosion.css"],
+        "drivers": ["drivers.css"],
+        "diagnostico": ["diagnostico.css"],
+        "red": ["red.css"],
+    }
+    nombres += por_pagina.get(pagina, [])
+    archivos_css = [CSS_DIR / nombre for nombre in nombres]
 
     estilos = []
 
@@ -46,14 +52,17 @@ def cargar_css():
     return "\n\n".join(estilos)
 
 
-def cargar_js():
+def cargar_js(pagina=None):
 
     if not JS_DIR.exists():
         return ""
 
-    archivos_js = sorted(
-        JS_DIR.glob("*.js")
-    )
+    nombres = ["theme.js"]
+    if pagina == "index":
+        nombres.append("explosion.js")
+    elif pagina == "drivers":
+        nombres.append("drviers.js")
+    archivos_js = [JS_DIR / nombre for nombre in nombres]
 
     scripts = []
 
@@ -64,7 +73,7 @@ def cargar_js():
             )
         )
 
-    return "\n\n".join(scripts)
+    return "\n;\n".join(scripts)
 
 
 def cargar_explosion_random():

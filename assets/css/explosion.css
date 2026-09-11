@@ -4,7 +4,7 @@
 
     z-index: 999999;
 
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 
@@ -82,3 +82,11 @@ body.explosion-activa .card {
         1.3s
         cubic-bezier(.22, .61, .36, 1);
 }
+/* Hidden before JS runs, preventing an overlay flash on report pages. */
+#explosion.explosion-visible { display: flex; }
+@media (prefers-reduced-motion: reduce) {
+    #explosion.explosion-visible { display: none; }
+    body.explosion-activa, body.explosion-activa .card { animation: none; }
+}
+/* Keep the entrance effect inside the viewport. */
+body.explosion-activa { overflow-x: clip; }

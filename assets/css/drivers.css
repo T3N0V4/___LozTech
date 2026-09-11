@@ -1,62 +1,96 @@
 .drivers-toolbar {
-    margin: 24px 0 14px;
+    margin: 28px 0 12px;
 }
 
 .driver-search {
     width: 100%;
-    padding: 11px 13px;
+    padding: 14px 18px;
 
     background: var(--surface);
     color: var(--text);
 
     border: 1px solid var(--border);
-    border-radius: 7px;
+    border-radius: 10px;
 
     font: inherit;
+}
+
+.driver-search::placeholder {
+    color: var(--text-secondary);
+}
+
+.driver-search:focus {
+    outline: 2px solid var(--info);
+    outline-offset: 3px;
+    border-color: var(--info);
+}
+
+.driver-count {
+    margin-bottom: 10px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+.drivers-wrapper {
+    overflow-x: auto;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
 }
 
 .drivers-table {
     width: 100%;
     border-collapse: collapse;
-
-    background: var(--surface);
-    border: 1px solid var(--border);
 }
 
 .drivers-table th,
 .drivers-table td {
-    padding: 12px;
+    padding: 14px 18px;
+
     border-bottom: 1px solid var(--border);
+
     text-align: left;
-    font-size: 13px;
+    vertical-align: top;
+
+    font-size: 15px;
 }
 
 .drivers-table th {
-    color: var(--text-secondary);
-    font-size: 11px;
-    text-transform: uppercase;
-}
+    position: sticky;
+    top: 0;
 
-.drivers-table tr:last-child td {
-    border-bottom: none;
+    background: var(--surface);
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .4px;
 }
 
 .drivers-table tbody tr:hover {
     background: var(--surface-secondary);
 }
 
-.driver-count {
-    margin-bottom: 10px;
-    color: var(--text-secondary);
-    font-size: 12px;
+.drivers-table tr:last-child td {
+    border-bottom: none;
 }
 
 @media (max-width: 800px) {
-    .drivers-wrapper {
-        overflow-x: auto;
-    }
 
     .drivers-table {
-        min-width: 750px;
+        min-width: 760px;
     }
 }
+/* Inventory rows and horizontal scrolling stay scoped to this page. */
+.drivers-wrapper { max-width: 100%; }
+.drivers-table { min-width: 760px; line-height: 1.6; }
+.drivers-table th { background: var(--surface-secondary); color: var(--text); }
+.drivers-table td { overflow-wrap: anywhere; }
+.drivers-table tbody tr:nth-child(even) { background: var(--surface-secondary); }
+.drivers-table tbody tr:hover { background: var(--info-bg); }
+.driver-search { min-height: 48px; }
