@@ -61,7 +61,7 @@ def cargar_js(pagina=None):
     if pagina == "index":
         nombres.append("explosion.js")
     elif pagina == "drivers":
-        nombres.append("drviers.js")
+        nombres.append("drivers.js")
     archivos_js = [JS_DIR / nombre for nombre in nombres]
 
     scripts = []
