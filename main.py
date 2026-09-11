@@ -123,13 +123,10 @@ def drivers():
     )
 
 
-def drivers_terminados(resultado):
+def drivers_terminados(archivo):
     desbloquear_interfaz()
 
-    messagebox.showinfo(
-        "Drivers exportados",
-        f"Drivers guardados en:\n{resultado}"
-    )
+    os.startfile(archivo)
 
 
 def abrir_reportes():
