@@ -1,11 +1,7 @@
 from html import escape
 from pathlib import Path
 
-from utils.assets import (
-    cargar_css,
-    cargar_js,
-    cargar_explosion_random
-)
+from utils.html_base import crear_pagina_html
 
 
 def crear_tarjetas(secciones):
@@ -177,11 +173,6 @@ def crear_reporte_html(
     secciones,
     archivo: Path
 ):
-    css = cargar_css()
-    js = cargar_js()
-
-    explosion = cargar_explosion_random()
-
     tarjetas = crear_tarjetas(
         secciones
     )
@@ -190,134 +181,21 @@ def crear_reporte_html(
         secciones
     )
 
-    html_explosion = ""
+    contenido = f"""
+    {resumen}
 
-    if explosion:
-        html_explosion = f"""
-        <div id="explosion">
-            <img
-                src="{explosion}"
-                alt=""
-            >
-        </div>
-        """
+    <section class="checks">
+        {tarjetas}
+    </section>
+    """
 
-    html = f"""
-<!DOCTYPE html>
-
-<html lang="es">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>{escape(str(titulo))}</title>
-
-    <style>
-        {css}
-    </style>
-
-</head>
-
-<body>
-
-    {html_explosion}
-
-        <header>
-
-        <div class="container">
-
-            <div class="header-top">
-
-                <div class="brand">
-                    LOZTECH
-                </div>
-
-                <select
-                    id="theme-selector"
-                    class="theme-selector"
-                    aria-label="Tema"
-                >
-                    <option value="black">
-                        Black
-                    </option>
-
-                    <option value="blue">
-                        Blue
-                    </option>
-
-                    <option value="violet">
-                        Violet
-                    </option>
-
-                    <option value="cosmos">
-                        Cosmos
-                    </option>
-
-                    <option value="grey">
-                        Grey
-                    </option>
-                </select>
-
-            </div>
-            <nav class="nav">
-                <a href="index.html">Inicio</a>
-                <a href="diagnostico.html">Diagnóstico</a>
-                <a href="drivers.html">Drivers</a>
-                <a href="red.html">Red</a>
-            </nav>
-
-            <h1>
-                {escape(str(titulo))}
-            </h1>
-
-            <p>
-                {escape(str(subtitulo))}
-            </p>
-
-        </div>
-
-    </header>
-
-
-    <main class="container">
-
-        {resumen}
-
-        <section class="checks">
-            {tarjetas}
-        </section>
-
-    </main>
-
-
-    <footer>
-        LozTech USB · Reporte generado localmente
-    </footer>
-
-
-    <script>
-        {js}
-    </script>
-
-</body>
-
-</html>
-"""
-
-    archivo.parent.mkdir(
-        parents=True,
-        exist_ok=True
+    return crear_pagina_html(
+        titulo=titulo,
+        subtitulo=subtitulo,
+        contenido=contenido,
+        archivo=archivo,
+        footer=(
+            "LozTech USB · "
+            "Reporte generado localmente"
+        )
     )
-
-    archivo.write_text(
-        html,
-        encoding="utf-8"
-    )
-
-    return archivo
