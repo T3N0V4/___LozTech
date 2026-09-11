@@ -265,6 +265,12 @@ def crear_reporte_html(
                 </select>
 
             </div>
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="diagnostico.html">Diagnóstico</a>
+                <a href="drivers.html">Drivers</a>
+                <a href="red.html">Red</a>
+            </nav>
 
             <h1>
                 {escape(str(titulo))}

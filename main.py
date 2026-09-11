@@ -5,7 +5,7 @@ from tkinter import ttk, messagebox
 from modules.diagnostico import generar_diagnostico
 from modules.red import diagnosticar_red
 from modules.drivers import exportar_drivers
-from utils.rutas import REPORTES_DIR
+from utils.rutas import HTML_DIR
 from utils.tareas import ejecutar_tarea
 
 
@@ -133,7 +133,12 @@ def drivers_terminados(resultado):
 
 
 def abrir_reportes():
-    os.startfile(REPORTES_DIR)
+    archivo = HTML_DIR / "diagnostico.html"
+
+    if archivo.exists():
+        os.startfile(archivo)
+    else:
+        os.startfile(HTML_DIR)
 
 
 root = tk.Tk()
@@ -193,7 +198,7 @@ crear_boton(
 )
 
 crear_boton(
-    "Abrir reportes",
+    "Abrir panel",
     abrir_reportes
 )
 
