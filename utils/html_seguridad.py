@@ -131,8 +131,11 @@ Sin detección: {undetected}
                 </summary>
 
                 <pre>Ruta: {escape(resultado["ruta"])}
-Tamaño: {bytes_a_mb(resultado["tamano"])} MB
-SHA-256: {escape(resultado["sha256"])}</pre>
+                Tamaño: {bytes_a_mb(resultado["tamano"])} MB
+                Extensión: {escape(resultado["extension"] or "Sin extensión")}
+                MD5: {escape(resultado["hashes"]["md5"])}
+                SHA-1: {escape(resultado["hashes"]["sha1"])}
+                SHA-256: {escape(resultado["hashes"]["sha256"])}</pre>
 
             </details>
 

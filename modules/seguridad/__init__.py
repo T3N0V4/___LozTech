@@ -1,0 +1,1 @@
+from modules.seguridad.analisis import analizar_archivo

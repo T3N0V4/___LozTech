@@ -1,18 +1,35 @@
+# Entornos virtuales
 .venv/
+.venv_build/
+
+# Python
 __pycache__/
 *.pyc
+
+# Salidas generadas por LozTech
+HTML/
 REPORTES/
 DRIVERS_EXPORTADOS/
+
+# Build
 build/
 dist/
 *.spec
+
+# Tests / herramientas temporales
+.playwright-cli/
+output/
+
+# Claves / secretos
+virustotal.key
+
+# Herramientas externas
+tools/
+
+# IDE
 .vscode/
 .idea/
+
+# Windows
 Thumbs.db
 Desktop.ini
-virustotal.key
-/modules/__pycache__
-/modules/__pycache__
-utils/__pycache__/__init__.cpython-312.pyc
-/utils/__pycache__
-/HTML
