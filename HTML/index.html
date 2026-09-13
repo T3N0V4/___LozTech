@@ -795,7 +795,7 @@ footer { letter-spacing: .4px; }
 body:has(main .panel-link) header {
     position: relative;
     overflow: hidden;
-    padding-bottom: 48px;
+    padding-bottom: 32px;
     background:
         radial-gradient(ellipse at 85% 25%, var(--info-bg), transparent 58%),
         linear-gradient(135deg, var(--surface), var(--background));
@@ -814,19 +814,22 @@ body:has(main .panel-link) header::after {
 }
 body:has(main .panel-link) header .container { position: relative; z-index: 1; }
 body:has(main .panel-link) header h1 {
-    font-size: clamp(48px, 7vw, 76px);
-    letter-spacing: -2.5px;
-    margin-top: 44px;
+    font-size: clamp(36px, 5vw, 56px);
+    letter-spacing: -1.5px;
+    margin-top: 30px;
 }
 body:has(main .panel-link) .nav a[href*="index.html"] {
     color: var(--text);
     background: var(--info-bg);
     box-shadow: inset 0 -2px var(--info);
 }
+.panel-intro { margin-bottom: 22px; }
+.panel-intro h2 { margin: 0; font-size: 22px; letter-spacing: -.4px; }
+.panel-intro p { margin: 4px 0 0; color: var(--text-secondary); }
 main > .checks:has(.panel-link) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: stretch;
-    gap: 22px;
+    gap: 18px;
     margin-top: 8px;
     counter-reset: panel;
 }
@@ -835,8 +838,8 @@ main > .checks:has(.panel-link) {
     --panel-tint: var(--info-bg);
     display: flex;
     flex-direction: column;
-    min-height: 300px;
-    padding: 30px;
+    min-height: 260px;
+    padding: 24px;
     background: linear-gradient(155deg, var(--panel-tint), var(--surface) 65%);
     counter-increment: panel;
 }
@@ -848,42 +851,51 @@ main > .checks:has(.panel-link) {
     --panel-accent: var(--ok);
     --panel-tint: var(--ok-bg);
 }
+.card:has(.panel-link[href*="seguridad.html"]) {
+    --panel-accent: var(--text-secondary);
+    --panel-tint: var(--surface-secondary);
+}
 .card:has(.panel-link)::before {
     position: static;
     content: counter(panel, decimal-leading-zero);
-    width: 48px;
-    height: 48px;
+    width: 38px;
+    height: 38px;
     display: grid;
     place-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 18px;
     background: var(--panel-tint);
     color: var(--panel-accent);
     border: 1px solid var(--panel-accent);
-    border-radius: 14px;
-    font-size: 16px;
+    border-radius: 11px;
+    font-size: 14px;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
 }
-.card:has(.panel-link) h2 { font-size: 26px; letter-spacing: -.6px; }
-.card:has(.panel-link) .resumen { margin-bottom: 28px; }
-.card:has(.panel-link):hover { border-color: var(--panel-accent); }
+.card:has(.panel-link) h2 { font-size: 24px; letter-spacing: -.6px; }
+.card:has(.panel-link) .resumen { margin-bottom: 22px; }
+.card:has(.panel-link):hover,
+.card:has(.panel-link):focus-within { border-color: var(--panel-accent); }
 .card .panel-link {
     justify-content: space-between;
     gap: 12px;
     margin-top: auto;
     background: var(--panel-tint);
     border-color: var(--panel-accent);
-    padding: 12px 16px;
+    padding: 12px;
 }
-.card .panel-link::after { content: "\2197"; color: var(--panel-accent); font-size: 22px; }
+.card .panel-link::after { content: "\2192"; color: var(--panel-accent); font-size: 22px; }
 .card .panel-link:hover { background: var(--surface-secondary); }
 .card .panel-link:focus-visible { outline-color: var(--panel-accent); }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+    main > .checks:has(.panel-link) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 580px) {
     main > .checks:has(.panel-link) { grid-template-columns: 1fr; }
     .card:has(.panel-link) { min-height: 0; padding: 24px; }
     .card:has(.panel-link)::before { margin-bottom: 20px; }
     body:has(main .panel-link) header::after { right: -280px; }
 }
+
 
 #explosion {
     position: fixed;
@@ -1051,6 +1063,10 @@ body.explosion-activa { overflow-x: clip; }
                     Red
                 </a>
 
+                <a href="seguridad.html">
+                    Seguridad
+                </a>
+
             </nav>
 
 
@@ -1059,7 +1075,7 @@ body.explosion-activa { overflow-x: clip; }
             </h1>
 
             <p>
-                Herramientas y reportes de LozTech.
+                Todos los resultados de tus herramientas, en un solo lugar.
             </p>
 
         </div>
@@ -1070,7 +1086,12 @@ body.explosion-activa { overflow-x: clip; }
     <main class="container">
 
         
-    <section class="checks">
+    <div class="panel-intro">
+        <h2 id="reportes-titulo">Tus reportes</h2>
+        <p>Ejecutá las herramientas desde la aplicación y consultá los resultados acá.</p>
+    </div>
+
+    <section class="checks" aria-labelledby="reportes-titulo">
 
         <article class="card info">
 
@@ -1079,14 +1100,14 @@ body.explosion-activa { overflow-x: clip; }
             </div>
 
             <p class="resumen">
-                Revisar estado general del sistema.
+                Estado general del equipo y puntos a revisar.
             </p>
 
             <a
                 class="panel-link"
                 href="diagnostico.html"
             >
-                Abrir diagnóstico
+                Ver diagnóstico
             </a>
 
         </article>
@@ -1099,14 +1120,14 @@ body.explosion-activa { overflow-x: clip; }
             </div>
 
             <p class="resumen">
-                Ver drivers detectados y exportados.
+                Drivers detectados y copias exportadas.
             </p>
 
             <a
                 class="panel-link"
                 href="drivers.html"
             >
-                Abrir drivers
+                Ver drivers
             </a>
 
         </article>
@@ -1119,14 +1140,33 @@ body.explosion-activa { overflow-x: clip; }
             </div>
 
             <p class="resumen">
-                Revisar configuración y conectividad.
+                Configuración de red y estado de la conexión.
             </p>
 
             <a
                 class="panel-link"
                 href="red.html"
             >
-                Abrir red
+                Ver red
+            </a>
+
+        </article>
+
+        <article class="card info">
+
+            <div class="card-top">
+                <h2>Seguridad</h2>
+            </div>
+
+            <p class="resumen">
+                Resultado de la última revisión de un archivo.
+            </p>
+
+            <a
+                class="panel-link"
+                href="seguridad.html"
+            >
+                Ver seguridad
             </a>
 
         </article>

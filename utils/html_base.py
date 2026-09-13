@@ -119,6 +119,10 @@ def crear_pagina_html(
                     Red
                 </a>
 
+                <a href="seguridad.html">
+                    Seguridad
+                </a>
+
             </nav>
 
 

@@ -10,3 +10,9 @@ dist/
 .idea/
 Thumbs.db
 Desktop.ini
+virustotal.key
+/modules/__pycache__
+/modules/__pycache__
+utils/__pycache__/__init__.cpython-312.pyc
+/utils/__pycache__
+/HTML

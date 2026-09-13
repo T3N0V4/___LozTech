@@ -5,7 +5,12 @@ from utils.html_base import crear_pagina_html
 def crear_index():
 
     contenido = """
-    <section class="checks">
+    <div class="panel-intro">
+        <h2 id="reportes-titulo">Tus reportes</h2>
+        <p>Ejecutá las herramientas desde la aplicación y consultá los resultados acá.</p>
+    </div>
+
+    <section class="checks" aria-labelledby="reportes-titulo">
 
         <article class="card info">
 
@@ -14,14 +19,14 @@ def crear_index():
             </div>
 
             <p class="resumen">
-                Revisar estado general del sistema.
+                Estado general del equipo y puntos a revisar.
             </p>
 
             <a
                 class="panel-link"
                 href="diagnostico.html"
             >
-                Abrir diagnóstico
+                Ver diagnóstico
             </a>
 
         </article>
@@ -34,14 +39,14 @@ def crear_index():
             </div>
 
             <p class="resumen">
-                Ver drivers detectados y exportados.
+                Drivers detectados y copias exportadas.
             </p>
 
             <a
                 class="panel-link"
                 href="drivers.html"
             >
-                Abrir drivers
+                Ver drivers
             </a>
 
         </article>
@@ -54,14 +59,33 @@ def crear_index():
             </div>
 
             <p class="resumen">
-                Revisar configuración y conectividad.
+                Configuración de red y estado de la conexión.
             </p>
 
             <a
                 class="panel-link"
                 href="red.html"
             >
-                Abrir red
+                Ver red
+            </a>
+
+        </article>
+
+        <article class="card info">
+
+            <div class="card-top">
+                <h2>Seguridad</h2>
+            </div>
+
+            <p class="resumen">
+                Resultado de la última revisión de un archivo.
+            </p>
+
+            <a
+                class="panel-link"
+                href="seguridad.html"
+            >
+                Ver seguridad
             </a>
 
         </article>
@@ -73,7 +97,7 @@ def crear_index():
 
     return crear_pagina_html(
         titulo="Panel",
-        subtitulo="Herramientas y reportes de LozTech.",
+        subtitulo="Todos los resultados de tus herramientas, en un solo lugar.",
         contenido=contenido,
         archivo=archivo,
         footer="LozTech USB · Panel principal"

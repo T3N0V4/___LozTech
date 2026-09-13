@@ -1,0 +1,88 @@
+17:21:39:552 2026.09.12 Service_KMS 17.1.0.0
+Official Site: 
+http://forums.mydigitallife.info/forums/51-KMS-tools
+KMSpico v10.2.0
+Time Start: 12/9/2026 17:21:39
+
+17:21:39:552 Checking Internet Connection...
+17:21:39:557 Windows Detected: Windows 10 Pro : Professional : 6.3 : 26200
+17:21:39:558 Loading SECOH-QAD...
+17:21:39:559 Set Registry : Image File Execution Options\SppExtComObj.exe:Debugger
+17:21:39:559 Using host Forward: 10.227.74.202:1688
+17:21:39:559 Using host Local: 127.19.248.137:1688
+17:21:39:559 Using method: SECOH-QAD
+17:21:39:561 Opening Firewall Port...
+17:21:39:570 Internet Connection Detected
+17:21:39:571 Synchronizing Time...
+17:21:39:602 Opening Firewall App...
+17:21:39:850 Time synchronized
+17:21:40:007 KMSEmulator Port: 1688
+17:21:40:007 Get Registry : SYSTEM\CurrentControlSet\Services\sppsvc:Start
+17:21:40:007 KMSEmulator running port: 1688
+17:21:40:011 Office 2013 Found: C:\Program Files (x86)\Microsoft Office\Office15\
+17:21:40:011 Office 2016 Skipped
+17:21:40:011 Office 2010 Skipped
+17:21:41:154 Found Office 2013 Products: 1
+17:21:41:154 Name: Office 15, OfficeProPlusVL_KMS_Client edition
+Description: Office 15, VOLUME_KMSCLIENT channel
+GracePeriodRemaining: 259191
+LicenseStatus: 1
+PartialProductKey: GVGXT
+GenuineStatus: 0
+
+17:21:41:337 DisableKeyManagementServiceHostCaching 0
+17:21:41:338 Set Registry : SoftwareProtectionPlatform\0ff1ce15-a989-479d-af46-f275c6370663\4a5d124a-e620-44ba-b6ff-658961b33b9a:KeyManagementServiceName
+17:21:41:338 Set Registry : SoftwareProtectionPlatform\0ff1ce15-a989-479d-af46-f275c6370663\4a5d124a-e620-44ba-b6ff-658961b33b9a:KeyManagementServicePort
+17:21:41:338 Set Registry : SoftwareProtectionPlatform\0ff1ce15-a989-479d-af46-f275c6370663\b322da9c-a2e2-4058-9e4e-f59a6970bd69:KeyManagementServiceName
+17:21:41:338 Set Registry : SoftwareProtectionPlatform\0ff1ce15-a989-479d-af46-f275c6370663\b322da9c-a2e2-4058-9e4e-f59a6970bd69:KeyManagementServicePort
+17:21:41:339 Set Registry : SoftwareProtectionPlatform\0ff1ce15-a989-479d-af46-f275c6370663\e13ac10e-75d0-4aff-a0cd-764982cf541c:KeyManagementServiceName
+17:21:41:339 Set Registry : SoftwareProtectionPlatform\0ff1ce15-a989-479d-af46-f275c6370663\e13ac10e-75d0-4aff-a0cd-764982cf541c:KeyManagementServicePort
+17:21:41:339 Found Windows Products: 1
+17:21:41:339 Name: Windows(R), Professional edition
+Description: Windows(R) Operating System, VOLUME_KMSCLIENT channel
+GracePeriodRemaining: 259191
+LicenseStatus: 1
+PartialProductKey: T83GX
+GenuineStatus: 0
+
+17:21:41:356 DisableKeyManagementServiceHostCaching 0
+17:21:41:356 Set Registry : SoftwareProtectionPlatform:KeyManagementServiceName
+17:21:41:356 Set Registry : SoftwareProtectionPlatform:KeyManagementServicePort
+17:21:41:357 Activating Windows
+17:21:41:357 Activating Office 2013
+17:21:41:575 SetKeyManagementServiceMachine: 0: 10.227.74.202
+17:21:41:583 SetKeyManagementServicePort: 0: 1688
+17:21:41:786 SetKeyManagementServiceMachine: 0: 10.227.74.202
+17:21:42:101 Connection accepted from [::ffff:127.0.0.1]:51635
+17:21:42:104 Received request: v6, AppID: 55c92734-d682-4d71-983e-d6ec3f16059f, Machine: Jano
+17:21:42:104 Sending response: v6, PID: 03612-03308-152-832889-03-3082-10240.0000-1432015, HwID: FC57BA06AA62245D
+17:21:42:105 Connection closed
+17:21:42:850 Windows(R), Professional edition Activated 0
+17:21:42:850 Set Registry : HKEY_USERS\S-1-5-20\SoftwareProtectionPlatform\55c92734-d682-4d71-983e-d6ec3f16059f\2de67392-b7a7-462a-b1ca-108dd189f588:DiscoveredKeyManagementServiceIpAddress
+17:21:42:856 SetKeyManagementServicePort: 0: 1688
+17:21:43:028 ClearKeyManagementServiceMachine 0
+17:21:43:035 ClearKeyManagementServicePort 0
+17:21:43:095 Connection accepted from [::ffff:127.0.0.1]:51636
+17:21:43:095 Received request: v6, AppID: 0ff1ce15-a989-479d-af46-f275c6370663, Machine: Jano
+17:21:43:097 Sending response: v6, PID: 03612-00206-234-518499-03-3082-10240.0000-3422015, HwID: 2DA806E291A1292F
+17:21:43:097 Connection closed
+17:21:43:460 Office 15, OfficeProPlusVL_KMS_Client edition Activated 0
+17:21:43:460 Set Registry : HKEY_USERS\S-1-5-20\SoftwareProtectionPlatform\0ff1ce15-a989-479d-af46-f275c6370663\b322da9c-a2e2-4058-9e4e-f59a6970bd69:DiscoveredKeyManagementServiceIpAddress
+17:21:43:460 Set Registry : SoftwareProtectionPlatform:KeyManagementServiceName
+17:21:43:460 Set Registry : SoftwareProtectionPlatform:KeyManagementServicePort
+17:21:43:460 Set Registry : SoftwareProtectionPlatform\0ff1ce15-a989-479d-af46-f275c6370663\4a5d124a-e620-44ba-b6ff-658961b33b9a:KeyManagementServiceName
+17:21:43:460 Set Registry : SoftwareProtectionPlatform\0ff1ce15-a989-479d-af46-f275c6370663\4a5d124a-e620-44ba-b6ff-658961b33b9a:KeyManagementServicePort
+17:21:43:462 Set Registry : SoftwareProtectionPlatform\0ff1ce15-a989-479d-af46-f275c6370663\b322da9c-a2e2-4058-9e4e-f59a6970bd69:KeyManagementServiceName
+17:21:43:462 Set Registry : SoftwareProtectionPlatform\0ff1ce15-a989-479d-af46-f275c6370663\b322da9c-a2e2-4058-9e4e-f59a6970bd69:KeyManagementServicePort
+17:21:43:462 Set Registry : SoftwareProtectionPlatform\0ff1ce15-a989-479d-af46-f275c6370663\e13ac10e-75d0-4aff-a0cd-764982cf541c:KeyManagementServiceName
+17:21:43:462 Set Registry : SoftwareProtectionPlatform\0ff1ce15-a989-479d-af46-f275c6370663\e13ac10e-75d0-4aff-a0cd-764982cf541c:KeyManagementServicePort
+17:21:43:469 ClearKeyManagementServiceMachine 0
+17:21:43:476 ClearKeyManagementServicePort 0
+17:21:43:477 Closing Firewall Port...
+17:21:43:520 Closing Firewall App...
+17:21:43:581 Set Registry : HKEY_CURRENT_USER\Control Panel\Desktop:PaintDesktopVersion
+17:21:43:582 Unloading SECOH-QAD...
+17:21:43:582 Client listener shut down
+17:21:43:582 Del Registry : SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SppExtComObj.exe:
+17:21:43:591 Killing: SECOH-QAD
+17:21:43:593 Time Finish: 12/9/2026 17:21:43
