@@ -1,14 +1,59 @@
-from modules.seguridad.archivo import (
-    obtener_datos_archivo
-)
+from modules.seguridad.archivo import obtener_datos_archivo
+from modules.seguridad.virustotal import consultar_virustotal
+from modules.seguridad.antivirus import obtener_antivirus
+from modules.seguridad.defender import obtener_informacion_defender
+from modules.seguridad.avg import obtener_informacion_avg
 
-from modules.seguridad.virustotal import (
-    consultar_virustotal
-)
+
+def detectar_proveedores_antivirus(antivirus):
+    proveedores = set()
+
+    for producto in antivirus:
+        nombre = producto.get(
+            "nombre",
+            ""
+        ).lower()
+
+        if "avg" in nombre:
+            proveedores.add("avg")
+
+        if (
+            "defender" in nombre
+            or "microsoft" in nombre
+        ):
+            proveedores.add("defender")
+
+    return proveedores
+
+
+def obtener_seguridad_sistema():
+    antivirus = obtener_antivirus()
+
+    proveedores = detectar_proveedores_antivirus(
+        antivirus
+    )
+
+    seguridad = {
+        "antivirus": antivirus,
+        "proveedores": list(proveedores),
+        "defender": None,
+        "avg": None
+    }
+
+    if "defender" in proveedores:
+        seguridad["defender"] = (
+            obtener_informacion_defender()
+        )
+
+    if "avg" in proveedores:
+        seguridad["avg"] = (
+            obtener_informacion_avg()
+        )
+
+    return seguridad
 
 
 def analizar_archivo(archivo):
-
     resultado = obtener_datos_archivo(
         archivo
     )
@@ -24,7 +69,6 @@ def analizar_archivo(archivo):
     )
 
     if datos:
-
         atributos = (
             datos
             .get("data", {})
@@ -61,5 +105,9 @@ def analizar_archivo(archivo):
                     0
                 )
         }
+
+    resultado["seguridad"] = (
+        obtener_seguridad_sistema()
+    )
 
     return resultado

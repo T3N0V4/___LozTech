@@ -1,5 +1,7 @@
+import json
 import os
 import subprocess
+
 from pathlib import Path
 
 
@@ -18,26 +20,54 @@ def ejecutar_powershell(comando):
     )
 
     if resultado.returncode != 0:
-        return ""
+        return None
 
-    return resultado.stdout.strip()
+    salida = resultado.stdout.strip()
+
+    if not salida:
+        return None
+
+    return salida
+
+
+def ejecutar_powershell_json(comando):
+    salida = ejecutar_powershell(
+        comando
+    )
+
+    if not salida:
+        return None
+
+    try:
+        return json.loads(
+            salida
+        )
+
+    except json.JSONDecodeError:
+        return None
+
+
+def asegurar_lista(datos):
+    if not datos:
+        return []
+
+    if isinstance(datos, dict):
+        return [datos]
+
+    return datos
 
 
 def buscar_instalacion_avg():
-    rutas = [
-        Path(
-            os.environ.get(
-                "ProgramFiles",
-                r"C:\Program Files"
-            )
-        ) / "AVG" / "Antivirus",
+    program_files = Path(
+        os.environ.get(
+            "ProgramFiles",
+            r"C:\Program Files"
+        )
+    )
 
-        Path(
-            os.environ.get(
-                "ProgramFiles",
-                r"C:\Program Files"
-            )
-        ) / "AVG"
+    rutas = [
+        program_files / "AVG" / "Antivirus",
+        program_files / "AVG"
     ]
 
     encontradas = []
@@ -66,7 +96,7 @@ Select-Object `
 ConvertTo-Json -Depth 3
 """
 
-    return ejecutar_powershell(
+    return ejecutar_powershell_json(
         comando
     )
 
@@ -84,25 +114,31 @@ Select-Object `
 ConvertTo-Json -Depth 3
 """
 
-    return ejecutar_powershell(
+    return ejecutar_powershell_json(
         comando
     )
 
 
 def obtener_version_avg():
     comando = r"""
-Get-CimInstance Win32_Product |
+$paths = @(
+    "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*",
+    "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
+)
+
+Get-ItemProperty $paths |
 Where-Object {
-    $_.Name -match '^AVG'
+    $_.DisplayName -match '^AVG'
 } |
 Select-Object `
-    Name,
-    Version,
-    Vendor |
+    DisplayName,
+    DisplayVersion,
+    Publisher,
+    InstallLocation |
 ConvertTo-Json -Depth 3
 """
 
-    return ejecutar_powershell(
+    return ejecutar_powershell_json(
         comando
     )
 
@@ -113,11 +149,17 @@ def obtener_informacion_avg():
             buscar_instalacion_avg(),
 
         "servicios":
-            obtener_servicios_avg(),
+            asegurar_lista(
+                obtener_servicios_avg()
+            ),
 
         "procesos":
-            obtener_procesos_avg(),
+            asegurar_lista(
+                obtener_procesos_avg()
+            ),
 
         "version":
-            obtener_version_avg()
+            asegurar_lista(
+                obtener_version_avg()
+            )
     }
